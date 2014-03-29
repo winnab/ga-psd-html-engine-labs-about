@@ -1,0 +1,328 @@
+$font-family: 'Source Sans Pro', sans-serif;
+
+// colors
+$dark-blue: #003047;
+$light-gray: #EDEDED;
+$medium-blue: #01527D;
+$white: #FFFFFF;
+$black: #000000;
+
+@mixin img-bckgrnd($height) {
+    background-image: url(../img/bg_b.png);
+    background-size: cover;
+    height: $height;
+    padding: 0;
+}
+
+/* *********************************************************************************
+//
+// CORE ELEMENTS
+//
+// *********************************************************************************/
+
+  body {
+    font-family: $font-family;
+    font-weight:400;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $medium-blue;
+
+    :hover {
+      color: $dark-blue;
+    }
+
+    &.rounded-link {
+      color: $white;
+      text-align: center;
+      font-size: 1.5em;
+      display: block;
+      margin: 30px 0 0 75px;
+      padding: 10px 15px;
+      border-radius: 50px;
+      background-color: $black;
+    }
+  }
+
+  // HEADER *******************************************************
+
+  header {
+    margin: 10px 0 35px;
+  }
+
+  nav {
+    .nav-active {
+      color: $medium-blue;
+    }
+
+    ul{
+      padding-top: 20px;
+
+      li {
+        float: left;
+        list-style: none;
+        text-transform: uppercase;
+
+        a{
+          margin-right: 25px;
+          text-transform: uppercase;
+          display: inline;
+
+          &.contact {
+            color: $white;
+            font-size: 90%;
+            text-transform: none;
+            margin: -3px 0 0 0;
+            padding: 4px 20px;
+            border-radius: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  #logo {
+    background: url(../img/sprite.png) no-repeat ;
+    height: 93px;
+    width: 204px;
+    background-position: -40px -10px;
+
+    h1 {
+      text-indent: -9999em;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // BODY SECTIONS *******************************************************
+
+  .dropcap {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+
+  .sprite{
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    h1 {
+      text-indent: -9999em;
+    }
+  }
+
+  .about {
+    @include img-bckgrnd(380px);
+
+    padding-bottom: 0;
+    color: $white;
+
+    p {
+      line-height: 1.75em;
+    }
+
+  }
+
+  #phone {
+    background-position: 30px -100px;
+    height: 350px;
+  }
+
+  #capa {
+    font-size: 6em;
+    font-weight: 700;
+    float: left;
+    line-height: .75em;
+    margin-right: 10px;
+  }
+  #batcave {
+    background-image: url(../img/sprite.png);
+    background-position: -144px -897px;
+    height: 300px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+  }
+
+  .headshot {
+    float: left;
+    width: 25%;
+    height: 177px;
+    width: 177px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+
+    h3, h4 {
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-weight: 700;
+      margin-top: 1.5em;
+    }
+
+    h4 {
+      font-weight: 200;
+    }
+  }
+
+  #robin {
+    background-image: url(../img/sprite.png);
+    background-position: -47px -694px;
+  }
+
+  #batman {
+    background-image: url(../img/sprite.png);
+    background-position: -251px -694px;
+  }
+
+  #joker {
+    background-image: url(../img/sprite.png);
+    background-position: -447px -694px;
+  }
+
+  #catwoman {
+    background-image: url(../img/sprite.png);
+    background-position: -743px -694px;
+  }
+
+  // FOOTER *******************************************************
+
+  .footer{
+    @include img-bckgrnd(auto);
+  }
+
+  footer {
+    ul{
+      list-style: none;
+      padding: 0;
+    }
+    .heading {
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+  }
+
+/* *********************************************************************************
+//
+// GRID
+//
+// *********************************************************************************/
+
+  .container, .group {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .container:after,
+  .group:after,
+  .content-section:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+    }
+  * html .group             { zoom: 1; } /* IE6 */
+  *:first-child+html .group { zoom: 1; } /* IE7 */
+
+  .gutter {
+    width: 5%;
+    content: "";
+    min-height: 1px;
+    float: left;
+    background-color: blue;
+  }
+
+  .content-section {
+    width: 90%;
+    max-width: 960px;
+    float: left;
+  }
+
+  [class*="col-"], .gutter  {
+    padding: 0 15px;
+    background-color: pink;
+    float: left;
+  }
+
+  .col-1-of-12 {
+    width: 8.3333%
+  }
+
+  .col-2-of-12 {
+    width: 16.66667%
+  }
+
+  .col-3-of-12 {
+    width: 25%
+  }
+
+  .col-4-of-12 {
+    width: 33.3333%
+  }
+
+  .col-5-of-12 {
+    width: 62.5%
+  }
+
+  .col-6-of-12 {
+    width: 50%
+  }
+
+  .col-7-of-12 {
+    width: 58.3333%
+  }
+
+  .col-8-of-12 {
+    width: 66.66667%
+  }
+
+  .col-9-of-12 {
+    width: 75%
+  }
+
+  .col-10-of-12 {
+    width: 83.3333%
+  }
+
+  .col-11-of-12 {
+    width: 91.66667%
+  }
+
+  .col-12-of-12 {
+    width: 100%
+  }
+
+  .divider {
+    border-top: 1px solid #a5a5a5;
+    text-align: center;
+  }
+
+/* *********************************************************************************
+//
+// GENERAL HELPERS
+//
+// *********************************************************************************/
+
+  .text p {
+    line-height: 1.7em;
+  }
+
+  .pull-left{
+    float: left;
+  }
+
+  .pull-right{
+    float: right;
+  }
