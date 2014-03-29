@@ -1,8 +1,11 @@
 $font-family: 'Source Sans Pro', sans-serif;
+$font-size: 16px;
+$line-height: 1.75em;
 
 // colors
 $dark-blue: #003047;
-$light-gray: #EDEDED;
+$mid-gray: #B9B9B9;
+$light-gray: #EFEFEF;
 $medium-blue: #01527D;
 $white: #FFFFFF;
 $black: #000000;
@@ -14,6 +17,10 @@ $black: #000000;
     padding: 0;
 }
 
+@mixin letter-spacing($letter-spacing){
+  letter-spacing: $letter-spacing;
+}
+
 /* *********************************************************************************
 //
 // CORE ELEMENTS
@@ -22,6 +29,8 @@ $black: #000000;
 
   body {
     font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
     font-weight:400;
   }
 
@@ -40,21 +49,29 @@ $black: #000000;
     }
 
     &.rounded-link {
+      @include letter-spacing(.05em);
       color: $white;
+      font-weight: 300;
       text-align: center;
       font-size: 1.5em;
       display: block;
-      margin: 30px 0 0 75px;
-      padding: 10px 15px;
+      margin: 50px 100px 0;
+      padding: 10px 0;
       border-radius: 50px;
       background-color: $black;
     }
+
+    span {
+      padding: 0 0 0 25px;
+    }
   }
+
+
 
   // HEADER *******************************************************
 
   header {
-    margin: 10px 0 35px;
+    margin: 10px 0;
   }
 
   nav {
@@ -79,9 +96,10 @@ $black: #000000;
             color: $white;
             font-size: 90%;
             text-transform: none;
-            margin: -3px 0 0 0;
-            padding: 4px 20px;
+            margin: 0;
+            padding: 0 20px 1px;
             border-radius: 13px;
+            @include letter-spacing(.05em);
           }
         }
       }
@@ -103,15 +121,6 @@ $black: #000000;
 
   // BODY SECTIONS *******************************************************
 
-  .dropcap {
-    float: left;
-    font-size: 75px;
-    line-height: 60px;
-    padding-top: 4px;
-    padding-right: 8px;
-    padding-left: 3px;
-  }
-
   .sprite{
     background-image: url(../img/sprite.png);
     background-repeat: no-repeat;
@@ -121,79 +130,120 @@ $black: #000000;
   }
 
   .about {
-    @include img-bckgrnd(380px);
-
-    padding-bottom: 0;
-    color: $white;
-
-    p {
-      line-height: 1.75em;
+    .content-section{
+      margin: 40px 0 0 0;
     }
 
+    @include img-bckgrnd(auto);
+    color: $white;
+
+    p{
+      font-weight: 300;
+    }
+
+    h2{
+      margin-top: 45px;
+    }
+
+    #phone {
+      background-position: 30px -100px;
+      height: 350px;
+    }
   }
 
-  #phone {
-    background-position: 30px -100px;
-    height: 350px;
-  }
-
-  #capa {
-    font-size: 6em;
-    font-weight: 700;
+  .dropcap {
     float: left;
-    line-height: .75em;
-    margin-right: 10px;
+    font-size: 85px;
+    line-height: 90px;
+    font-weight: 700;
+    padding: 10px 15px 0 5px;
+  }
+
+  .content-section.full-width-text {
+    margin: 50px 0;
+  }
+
+  .location {
+    h2 {
+      margin: 20px 0;
+      line-height: 1.3em;
+    }
   }
   #batcave {
+    background-color: red;
     background-image: url(../img/sprite.png);
-    background-position: -144px -897px;
-    height: 300px;
+    background-position: -175px -900px;
+    height: 320px;
+    margin: 0;
     background-repeat: no-repeat;
     border-radius: 20px;
   }
 
-  .headshot {
-    float: left;
-    width: 25%;
-    height: 177px;
-    width: 177px;
-    background-repeat: no-repeat;
-    margin: 0 auto;
+  .team {
 
-    h3, h4 {
+    h2:nth-of-type(1){
+      margin: 100px 0 50px 0;
       text-align: center;
-      font-size: 1.5em;
+      line-height: 2px;
+      border-bottom: 1px solid $light-gray;
     }
 
-    h3 {
-      font-weight: 700;
-      margin-top: 1.5em;
+    span{
+      padding: 0 5px;
+      background-color: $white;
     }
 
-    h4 {
-      font-weight: 200;
+    .team-member {
+      font-size: 1.25em;
+      padding: 20px 0 50px;
+
+      h3, h4 {
+        text-align: center;
+      }
+
+      h3 {
+        font-weight: 700;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      h4 {
+        font-weight: 500;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      div:nth-of-type(1){
+        margin: 0 auto;
+        height: 172px;
+        width: 172px;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        border: 1px solid $mid-gray;
+
+        &#robin {
+          background-image: url(../img/sprite.png);
+          background-position: -49px -698px;
+        }
+
+        &#batman {
+          background-image: url(../img/sprite.png);
+          background-position: -252px -696px;
+        }
+
+        &#joker {
+          background-image: url(../img/sprite.png);
+          background-position: -454px -697px;
+        }
+
+        &#catwoman {
+          background-image: url(../img/sprite.png);
+          background-position: -750px -696px;
+        }
+      }
     }
   }
 
-  #robin {
-    background-image: url(../img/sprite.png);
-    background-position: -47px -694px;
-  }
-
-  #batman {
-    background-image: url(../img/sprite.png);
-    background-position: -251px -694px;
-  }
-
-  #joker {
-    background-image: url(../img/sprite.png);
-    background-position: -447px -694px;
-  }
-
-  #catwoman {
-    background-image: url(../img/sprite.png);
-    background-position: -743px -694px;
-  }
 
   // FOOTER *******************************************************
 
@@ -202,13 +252,22 @@ $black: #000000;
   }
 
   footer {
+    @include letter-spacing(.05em);
+    color: $mid-gray;
+    font-weight: 300;
+    line-height: 1.9em;
+    font-size: .8em;
+    padding: 30px 0 90px 0;
+
     ul{
       list-style: none;
       padding: 0;
+
     }
     .heading {
       text-transform: uppercase;
-      color: #ffffff;
+      color: $white;
+      padding-bottom: 15px;
     }
   }
 
@@ -241,7 +300,6 @@ $black: #000000;
     content: "";
     min-height: 1px;
     float: left;
-    background-color: blue;
   }
 
   .content-section {
@@ -252,7 +310,6 @@ $black: #000000;
 
   [class*="col-"], .gutter  {
     padding: 0 15px;
-    background-color: pink;
     float: left;
   }
 
@@ -273,7 +330,7 @@ $black: #000000;
   }
 
   .col-5-of-12 {
-    width: 62.5%
+    width: 41.66667%
   }
 
   .col-6-of-12 {
@@ -314,11 +371,6 @@ $black: #000000;
 // GENERAL HELPERS
 //
 // *********************************************************************************/
-
-  .text p {
-    line-height: 1.7em;
-  }
-
   .pull-left{
     float: left;
   }
