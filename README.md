@@ -1,4 +1,4 @@
-## PSD-to-HTML: Engine Labs Homepage
+## PSD-to-HTML: Engine Labs About page
 Technologies/skills used: HTML, CSS  
 
 ### Task
@@ -44,6 +44,7 @@ _For instance, for a div that needs to be noticable, naming it `.callout` rather
 * Want to use SCSS rather than CSS? Using [SASS](http://sass-lang.com/documentation/index.html) with this assignment is pretty easy. With a single file, go to the folder where you're saving your style files. Create a scss and css files with the same name (ie, `style.css` and `style.scss`. In the terminal `sass --watch style.scss:style.css`. More help `sass --help`
 
 ### Resources
+* [A grid system with nice demos](http://960.gs/)
 * Great resource for how to work with [sprite styles](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/CSS_Image_Sprites): [Sprite Cow](http://www.spritecow.com/)
 * Great resource for CSS tutorials and guidelines: `http://css-tricks.com/`
 * Great resource for web stuff in general, including CSS and HTML: `http://www.html5rocks.com/en/`
